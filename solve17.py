@@ -94,7 +94,7 @@ def main(argv):
   if solution_state:
     # Ensure that every printed byte is within the acceptable ASCII range (A..Z)
     for byte in solution_state.posix.files[sys.stdin.fileno()].all_bytes().chop(bits=8):
-      solution_state.add_constraints(byte >= 'A', byte <= 'Z')
+      solution_state.add_constraints(byte >= 'A', byte <= 'z')
 
     # Solve for the user input (recall that this is
     # 'solution_state.posix.dumps(sys.stdin.fileno())')
